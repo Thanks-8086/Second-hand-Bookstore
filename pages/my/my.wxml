@@ -1,0 +1,57 @@
+<view class="container">
+  <!-- 用户头像和昵称 -->
+  <view class="userinfo">
+    <button open-type="getUserInfo" bindgetuserinfo="onGetUserInfo" class="userinfo-avatar" style="background-image: url({{avatarUrl}})" size="mini"></button>
+    <view class="usrname">
+      <text>{{userInfo}}</text>
+    </view>
+  </view>
+
+  <!-- 管理 -->
+  <view class="bankuai1">
+    <!-- 收藏点赞和消息 -->
+    <view class="rowTag">
+      <view class="rowtags" bindtap="keep">
+        <image src="/icons/shoucang.png"></image>
+        <text>我的收藏</text>
+      </view>
+      <view class="rowtags" bindtap="like">
+        <image src="/icons/dianzan.png"></image>
+        <text>我的点赞</text>
+      </view>
+      <view class="rowtags" bindtap="want">
+        <image src="/icons/xiaoxi.png"></image>
+        <text>我的想要</text>
+      </view>
+    </view>
+    <!-- 评论管理 -->
+    <!-- <view class="tiaolie">
+      <image src="/icons/pinglun.png"></image>
+      <text>评论管理</text>
+    </view> -->
+    <!-- 我的发表 -->
+    <view class="tiaolie" bindtap="put">
+      <image src="/icons/shuju.png"></image>
+      <text>我的发表</text>
+    </view>
+  </view>
+
+  <!-- 其他区 -->
+  <view class="bankuai2">
+    <!-- 意见反馈 -->
+    <view class="tiaolie" bindtap="opinion">
+      <image src="/icons/kefu.png"></image>
+      <text>意见反馈</text>
+    </view>
+    <!-- 打赏支持 -->
+    <view class="tiaolie" bindtap="showQrcode">
+      <image src="/icons/liwu.png"></image>
+      <text>打赏支持</text>
+    </view>
+    <!-- 使用说明 -->
+    <view class="tiaolie" bindtap="useInstruction">
+      <image src="/icons/shuoming.png"></image>
+      <text>使用说明</text>
+    </view>
+  </view>
+</view>

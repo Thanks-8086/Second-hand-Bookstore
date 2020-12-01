@@ -1,0 +1,126 @@
+<import src="/templates/nodata.wxml" />
+
+<view class="container">
+  <!-- 卖家信息 -->
+  <view class="userinfo">
+    <image class="touxiang" src="{{book.avatarUrl}}"></image>
+    <view>
+      <view class="name">{{book.userName}}</view>
+      <!-- 时间、点赞、收藏、想要 -->
+      <view class="labellist">
+        <image src="/icons/date.png"></image>
+        <text>{{book.date}}</text>
+        <image src="/icons/zan.png"></image>
+        <text>{{book.likeNum}}</text>
+        <image src="/icons/shoucang_.png"></image>
+        <text>{{book.keepNum}}</text>
+        <image src="/icons/xihuan.png"></image>
+        <text>{{book.wantNum}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 书籍信息 -->
+  <view class="book-detail">
+    <!-- 书名 -->
+    <view class="xiang">
+      <image src="/icons/shuming.png"></image>
+      <view class="content">书名: {{book.bookName}}</view>
+    </view>
+    <!-- 价格 -->
+    <view class="xiang">
+      <image src="/icons/jiage.png"></image>
+      <view class="content">价格: {{book.price}} 元</view>
+    </view>
+    <!-- 描述 -->
+    <view class="xiang">
+      <image src="/icons/miaoshu.png"></image>
+      <view class="content">描述:</view>
+    </view>
+    <view class="textarea">
+      <text class="jieshao">{{book.desc}}</text>
+    </view>
+    <!-- 图片 -->
+    <view class="xiang">
+      <image src="/icons/tupian.png"></image>
+      <text>图片:</text>
+    </view>
+    <view class="imgRoot">
+      <block class="imgList" wx:for="{{book.fileIDs}}" wx:for-item="itemImg" wx:key="index">
+        <image class="img" src='{{itemImg}}' mode='aspectFill' data-img='{{[itemImg,book.fileIDs]}}' bindtap="previewImg"></image>
+      </block>
+    </view>
+
+    <view class="xiang1">
+      <!-- 点赞 -->
+      <view class="item" bindtap='postZan'>
+        <image src="{{zan.icon}}"></image>
+        <text>超赞</text>
+      </view>
+      <!-- 收藏 -->
+      <view class="item" bindtap='postCollection'>
+        <image src="{{collection.icon}}"></image>
+        <text>收藏</text>
+      </view>
+      <!-- 想要 -->
+      <view class="item" bindtap='postWant'>
+        <image src="{{want.icon}}"></image>
+        <text>想要</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 评论列表 -->
+  <view class="comments">
+    <view class='commentTitle'>
+      <image src="/icons/comments.png"></image>
+      <text>全部留言 · {{book.totalComments}}</text>
+    </view>
+    <!-- 数据不存在 -->
+    <view wx:if="{{nodata}}">
+      <template is="nodata" data="{{ nodata_str }}" />
+    </view>
+    <view class="commentshow">
+      <!-- 评论，点击评论内容回复 -->
+      <view class="commentitem" wx:for="{{commentList}}" wx:key="idx" wx:for-index="idx" wx:for-item="item" data-idx="{{idx}}">
+        <!-- 头像 -->
+        <image class="commentHead" src="{{item.cAvatarUrl}}" data-id="{{item._id}}" data-name="{{item.cNickName}}" data-openid="{{item.cOpenId}}" bindtap="focusComment"></image>
+        <view class='content'>
+          <!-- 评论者昵称和评论内容 -->
+          <view class="commentname" data-id="{{item._id}}" data-name="{{item.cNickName}}" data-openid="{{item.cOpenId}}" bindtap="focusComment">
+            {{item.cNickName}}
+            <view class="commentButtom">{{item.comment}}</view>
+          </view>
+          <!-- 显示子评论 -->
+          <view wx:if="{{childCommentShow}}">
+            <view class="child" wx:for="{{item.childComment}}" wx:key="id" wx:for-index="id" wx:for-item="childItem">
+              <view data-id="{{item._id}}" data-name="{{childItem.cNickName}}" data-openid="{{childItem.cOpenId}}" bindtap="focusComment">
+                <view class="childname">{{childItem.cNickName}}：</view>
+              </view>
+              <view>{{childItem.comment}}</view>
+            </view>
+          </view>
+          <view class="commentButtom1">
+            <!-- 评论时间 -->
+            <view>{{item.createDate}}</view>
+            <!-- 评论条数 -->
+            <view class="aaa" bindtap="childShow">
+              <image src="/icons/pinglun.png"></image>
+              <text>{{item.childComment.length}}</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 评论框 -->
+<view class="comment-box">
+  <!-- 头像 -->
+  <image src="{{avatarUrl}}"></image>
+  <!-- 评论框 -->
+  <input class='solid-bottom' maxlength="300" cursor-spacing="10" confirm-type="send" bindinput='commentInput' name="inputComment" value="{{commentContent}}" placeholder="{{placeholder}}" focus="{{focus}}" bindblur="onReplyBlur"></input>
+  <!-- 发送按钮 -->
+  <button class="but" bindtap="formSubmit" size="mini">发送</button>
+</view>

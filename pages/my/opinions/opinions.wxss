@@ -1,0 +1,33 @@
+/* pages/my/opinions/opinions.wxss */
+.container{
+  padding: 0 20rpx;
+  margin-top: 30rpx;
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  justify-items: flex-start;
+  align-items: flex-start;
+}
+.title{
+  margin: 20rpx;
+  position: absolute;
+  left: 10rpx
+}
+.ques{
+  height: 300rpx;
+  padding: 20rpx;
+  margin: 20rpx;
+  border: 1rpx #3f3f3f solid;
+  border-radius: 20rpx;
+  display: flex;
+  flex-wrap: wrap;
+  position: absolute;
+  top: 50rpx;
+}
+.send{
+  position: absolute;
+  top: 450rpx;
+  left: 190rpx;
+  background-color: #ffba40;
+  color: white;
+}

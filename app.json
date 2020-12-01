@@ -1,0 +1,46 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/fabu/fabu",
+    "pages/my/my",
+    "pages/books/books",
+    "pages/bookdetail/bookdetail",
+    "pages/my/opinions/opinions",
+    "pages/my/useInstruction/useInstruction",
+    "pages/my/myKeep/myKeep",
+    "pages/my/myLike/myLike",
+    "pages/my/myWant/myWant",
+    "pages/my/myPublish/myPublish"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "二手书城",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "selectedColor": "#333333",
+    "list": [
+      {
+        "pagePath": "pages/books/books",
+        "text": "书城",
+        "iconPath": "icons/shu2.png",
+        "selectedIconPath": "icons/shu1.png"
+      },
+      {
+        "pagePath": "pages/fabu/fabu",
+        "text": "发布",
+        "iconPath": "icons/del1.png",
+        "selectedIconPath": "icons/del.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "icons/wode.png",
+        "selectedIconPath": "icons/wode1.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

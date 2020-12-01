@@ -1,0 +1,7 @@
+<view class="container">
+  <view class="title">问题描述:</view>
+  <view class="ques">
+    <textarea placeholder="输入您所遇到的问题" bindinput="questionInput" value="{{question}}"></textarea>
+  </view>
+  <button class="send" bindtap="sendQues">提交</button>
+</view>

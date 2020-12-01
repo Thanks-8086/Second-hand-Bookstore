@@ -1,0 +1,7 @@
+.nodata{
+  display: flex;
+  justify-content: center;
+  margin-top: 50rpx;
+  font-size: 25rpx;
+  color: #666;
+}

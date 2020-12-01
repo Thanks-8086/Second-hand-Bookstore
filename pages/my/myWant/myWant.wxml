@@ -1,0 +1,7 @@
+<view class="container1">
+  <view wx:for="{{booklist}}"wx:for-item="i">
+    <view wx:for="{{book_id}}"wx:for-item="j">
+      <bookshow wx:if="{{i._id==j.postId&&i.soldout}}" itemM="{{i}}" bindtap="toDetail" data-id="{{i._id}}"  />
+    </view>
+  </view>
+</view>

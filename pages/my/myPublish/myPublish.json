@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "我的发表",
+  "usingComponents": {
+    "bookshow": "/components/bookshow/bookshow"
+  }
+}

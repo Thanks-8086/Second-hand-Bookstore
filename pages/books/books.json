@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "bookshow":"/components/bookshow/bookshow"
+  },
+  "navigationBarTitleText":"书城",
+  "enablePullDownRefresh": true
+}

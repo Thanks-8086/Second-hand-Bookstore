@@ -1,0 +1,146 @@
+page {
+  background-color: #efefef;
+  font-size: 30rpx;
+}
+
+image {
+  width: 30rpx;
+  height: 30rpx;
+}
+
+text {
+  margin: 0 10rpx;
+}
+
+.container {
+  background-color: white;
+  padding: 30rpx 20rpx;
+}
+
+.book {
+  width: 85%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 15rpx 20rpx;
+}
+
+.bookInput {
+  width: 50%;
+  margin-left: 20rpx;
+  padding: 5rpx 20rpx;
+  border: 1rpx #666 solid;
+  border-radius: 20rpx;
+}
+
+.price {
+  width: 85%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 15rpx 20rpx;
+}
+
+.priceInput {
+  width: 25%;
+  margin-left: 20rpx;
+  padding: 5rpx 20rpx;
+  border: 1rpx #666 solid;
+  border-radius: 20rpx;
+}
+
+.description {
+  width: 85%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 15rpx 20rpx;
+}
+
+.textarea {
+  min-height: 60rpx;
+  width: 85%;
+  margin: 0 20rpx 15rpx;
+  padding: 15rpx 20rpx;
+  border: 1rpx #666 solid;
+  border-radius: 20rpx;
+}
+
+.jieshao {
+  height: 100%;
+  overflow-y: hidden;
+  word-break: break-all;
+  word-wrap: break-word;
+}
+
+.label {
+  width: 85%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 15rpx 20rpx;
+}
+
+.labels {
+  width: 80%;
+  padding: 10rpx 20rpx;
+}
+
+.labelcheck {
+  margin: 8rpx 15rpx;
+  padding: 10rpx 10rpx;
+  font-size: 25rpx;
+  border-radius: 20rpx;
+  border: 1rpx #aaa solid;
+  color: #aaa;
+  display: inline-block;
+}
+
+.labelcheck.active {
+  border: 1rpx #ffba40 solid;
+  background-color: #ffba40;
+  color: white;
+}
+
+.iamgeRootAll {
+  margin-top: 30rpx;
+  margin-bottom: 60rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.imgItem {
+  margin: 6rpx;
+  position: relative;
+  width: 176rpx;
+  height: 176rpx;
+  background: gainsboro;
+}
+
+.img {
+  width: 100%;
+  height: 100%;
+}
+
+.closeImg {
+  position: absolute;
+  right: 0px;
+  width: 32rpx;
+  height: 32rpx;
+}
+
+.photo {
+  width: 50%;
+  height: 50%;
+  margin: 25%;
+}
+
+.fabu {
+  margin-top: 30rpx;
+  background-color: #27c18f;
+  color: white;
+  font-size: 35rpx;
+}

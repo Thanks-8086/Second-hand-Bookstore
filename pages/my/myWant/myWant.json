@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "我的想要",
+  "usingComponents": {
+    "bookshow": "/components/bookshow/bookshow"
+  }
+}

@@ -1,0 +1,56 @@
+<view class="container">
+  <!-- 书名 -->
+  <view class="book">
+    <image src="/icons/shuming.png"></image>
+    <text>书名:</text>
+    <input class="bookInput" bindinput="bookInput" value="{{bookName}}"></input>
+  </view>
+  <!-- 价格 -->
+  <view class="price">
+    <image src="/icons/jiage.png"></image>
+    <text>价格:</text>
+    <input class="priceInput" bindinput="priceInput" value="{{price}}"></input>
+    <text>元</text>
+  </view>
+  <!-- 描述 -->
+  <view class="description">
+    <image src="/icons/miaoshu.png"></image>
+    <text>描述:</text>
+  </view>
+  <view class="textarea">
+    <textarea class="jieshao" placeholder="把宝贝介绍清楚吧~" placeholder-style="color=#888888;font-size=26rpx;" class="detailInput" maxlength="1000" bindinput="detailInput" value="{{desc}}"></textarea>
+  </view>
+  <!-- 标签 -->
+  <view class="label">
+    <image src="/icons/biaoqian.png"></image>
+    <text>标签:</text>
+  </view>
+  <view class="labels">
+    <scroll-view scroll-x class="hotTag">
+      <view wx:for="{{labelItems}}" wx:for-index="idx" data-data="{{item}}" class="labelcheck {{idx==labelCur?'active':''}}" bindtap='labelSelect' data-id="{{idx}}">
+        {{item}}
+      </view>
+    </scroll-view>
+  </view>
+  <!-- 图片 -->
+  <view class="price">
+    <image src="/icons/tupian.png"></image>
+    <text>图片:</text>
+  </view>
+  <!-- 加图 -->
+  <view class="iamgeRootAll">
+    <block wx:for="{{imgList}}" wx:key="index">
+      <view class="imgItem">
+        <image class="img" src='{{item}}' mode='aspectFill'></image>
+        <image class="closeImg" bindtap="DeleteImg" src="/icons/cha.png" data-index="{{index}}"></image>
+      </view>
+    </block>
+    <!-- 选择图片按钮 -->
+    <view wx:if="{{imgList.length<8}}" class="imgItem" bindtap="ChooseImage">
+      <image class="photo" src="/icons/tianjia.png"></image>
+    </view>
+  </view>
+</view>
+
+<!-- 发布 -->
+<button style="width:25vw" class="fabu" bindtap="sendBook">发布</button>

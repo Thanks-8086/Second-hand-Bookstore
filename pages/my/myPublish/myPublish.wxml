@@ -1,0 +1,5 @@
+<view class="container1">
+  <view wx:for="{{booklist}}">
+    <bookshow wx:if="{{item.soldout}}" itemM="{{item}}" bindtap="toDetail" bindlongpress="deletebook" data-id="{{item._id}}"/>
+  </view>
+</view>

@@ -1,0 +1,6 @@
+/* pages/my/useInstruction/useInstruction.wxss */
+.container{
+  padding: 20rpx 40rpx;
+  color: #3f3f3f;
+  font-size: 30rpx;
+}

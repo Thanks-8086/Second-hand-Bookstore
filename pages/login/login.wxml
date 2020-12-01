@@ -1,0 +1,14 @@
+<!-- 需要使用 button 来授权登录 -->
+<view class="container">
+  <image src="/icons/shu.png"></image>
+</view>
+<view class="title">
+  <text>二手书城</text>
+</view>
+<view wx:if="{{canIUse}}" class="log">
+  <button class="but" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">微信登录</button>
+  <text class="tex">欢迎使用小程序，我们需要您的一些公开信息，包括微信昵称、头像等，请放心，我们会妥善保管您的信息~
+  </text>
+</view>
+
+<view wx:else>请升级微信版本</view>

@@ -1,0 +1,43 @@
+<import src="../../templates/nodata.wxml" />
+
+<!-- 搜索框 -->
+<view class="container">
+  <view class="search_area">
+    <input class="search_input" placeholder="输入书名" bindinput="getInput" value="{{filter}}"></input>
+    <icon type="search" wx:if="{{isSearch}}"></icon>
+    <icon type="clear" wx:if="{{isClear}}" bindtap="clearTap"></icon>
+  </view>
+  <button style="width:23vw" class="searchbutton" bindtap="searchTap">搜索</button>
+</view>
+
+<!-- 标签栏 -->
+<view class="box">
+  <scroll-view scroll-x class="nav">
+    <view wx:for="{{navItems}}" wx:for-index="idx" data-data="{{item}}" class="cu {{item.index==tabCur?'active':''}}" bindtap='tabSelect' data-id="{{item.index}}">
+      {{item.name}}
+    </view>
+  </scroll-view>
+  <!-- 热门 -->
+  <scroll-view wx:if="{{showHot}}" scroll-x class="hotTag">
+    <view wx:for="{{hotItems}}" wx:for-index="idx" data-data="{{item}}" class="hotcheck {{idx==hotCur?'active':''}}" bindtap='hotSelect' data-id="{{idx}}">
+      {{item}}
+    </view>
+  </scroll-view>
+  <!-- 标签 -->
+  <scroll-view wx:if="{{showLabels}}" scroll-x class="labelTag">
+    <view wx:for="{{labelList}}" wx:for-index="idx" data-data="{{item}}" class="labelcheck {{idx==labelCur?'active':''}}" bindtap='labelSelect' data-id="{{idx}}">
+      {{item}}
+    </view>
+  </scroll-view>
+</view>
+
+<!-- 显示书籍信息 -->
+<view class="container1">
+  <block wx:for="{{booklist}}">
+    <bookshow wx:if="{{item.soldout}}" itemM="{{item}}" bindtap="toDetail" data-id="{{item._id}}" />
+  </block>
+</view>
+<!-- 数据不存在 -->
+<view wx:if="{{nodata}}">
+  <template is="nodata" data="{{ nodata_str }}" />
+</view>

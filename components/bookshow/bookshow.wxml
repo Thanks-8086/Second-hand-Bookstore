@@ -1,0 +1,27 @@
+<view class="bookblock">
+  <image src="{{itemM.fileIDs[0]}}" mode="aspectFill"></image>
+  <view>
+    <view class="tiao">{{itemM.bookName}}</view>
+    <view class="tiao">
+      <view class="price">￥{{itemM.price}}</view>
+      <view class="want">{{itemM.wantNum}}人想要</view>
+    </view>
+  </view>
+  <view class="tiao">
+    <image class="touxiang" src="{{itemM.avatarUrl}}"></image>
+    <view class="name">{{itemM.userName}}</view>
+  </view>
+  <view class="tiao">
+    <!-- 时间、点赞、收藏、评论 -->
+    <view class="labelList">
+      <image src="/icons/date.png"></image>
+      <text>{{itemM.date}}</text>
+      <image src="/icons/zan.png"></image>
+      <text>{{itemM.likeNum}}</text>
+      <image src="/icons/shoucang_.png"></image>
+      <text>{{itemM.keepNum}}</text>
+      <image src="/icons/mypinglun.png"></image>
+      <text>{{itemM.totalComments}}</text>
+    </view>
+  </view>
+</view>

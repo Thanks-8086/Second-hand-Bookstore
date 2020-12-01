@@ -1,0 +1,64 @@
+/* components/bookshow/bookshow.wxss */
+
+image {
+  width: 335rpx;
+  height: 380rpx;
+  border-radius: 20rpx 20rpx 0 0;
+}
+
+.bookblock {
+  width: 335rpx;
+  height: 555rpx;
+  background-color: white;
+  font-size: 25rpx;
+  color: #3f3f3f;
+  border-radius: 20rpx;
+  margin: 15rpx 10rpx;
+}
+
+.tiao {
+  display: flex;
+  flex-direction: row;
+  margin: 8rpx 20rpx;
+  align-content: center;
+  position: relative;
+}
+
+.price {
+  color: red;
+}
+
+.want {
+  color: rgb(119, 118, 118);
+  font-size: 20rpx;
+  position: absolute;
+  right: 0;
+}
+
+.touxiang {
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 50%;
+}
+
+.name {
+  margin-left: 20rpx;
+  color: rgb(119, 118, 118);
+  font-size: 20rpx;
+}
+
+/* 点赞收藏等 */
+/* .labelList{
+  margin-bottom: 
+} */
+.labelList image {
+  width: 20rpx;
+  height: 20rpx;
+  margin: 0 5rpx;
+}
+
+.labelList text {
+  font-size: 20rpx;
+  color: rgb(119, 118, 118);
+  margin-right: 5rpx;
+}
